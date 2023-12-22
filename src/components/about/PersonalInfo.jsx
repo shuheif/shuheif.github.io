@@ -20,15 +20,6 @@ const PersonalInfo = () => {
             </>
           ),
         },
-        {
-          id: 3,
-          name: "Phone",
-          content: (
-            <>
-              <a href="tel:+1 608 361 8527">+1 608 361 8527</a>
-            </>
-          ),
-        },
       ],
     },
     {
