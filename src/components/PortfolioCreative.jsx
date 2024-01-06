@@ -14,15 +14,31 @@ const Portfolio = () => {
   const [isOpen2, setOpen2] = useState(false);
 
   // for modal details
-  const [isOpen3, setIsOpen3] = useState(false);
-  const [isOpen4, setIsOpen4] = useState(false);
+  const [isModalOpenTagBots, setIsOpenTagBots] = useState(false);
+  const [isModalOpenCoOps, setIsOpenCoOps] = useState(false);
+  const [isModalOpenOED, setIsOpenOED] = useState(false);
+  const [isModalOpenTimeTable, setIsTimeTable] = useState(false);
+  const [isModalOpenLittrex, setIsLittrex] = useState(false);
+  const [isModalOpenSamuraiZ, setIsSamuraiZ] = useState(false);
 
   // for modal details method
-  function toggleModalThree() {
-    setIsOpen3(!isOpen3);
+  function toggleModalTagBots() {
+    setIsOpenTagBots(!isModalOpenTagBots);
   }
-  function toggleModalFour() {
-    setIsOpen4(!isOpen4);
+  function toggleModalCoOps() {
+    setIsOpenCoOps(!isModalOpenCoOps);
+  }
+  function toggleModalOED() {
+    setIsOpenOED(!isModalOpenOED);
+  }
+  function toggleModalTimeTable() {
+    setIsTimeTable(!isModalOpenTimeTable);
+  }
+  function toggleModalLittrex() {
+    setIsLittrex(!isModalOpenLittrex);
+  }
+  function toggleModalSamuraiZ() {
+    setIsSamuraiZ(!isModalOpenSamuraiZ);
   }
 
   return (
@@ -34,7 +50,7 @@ const Portfolio = () => {
               <div className="title_flex">
                 <div className="left">
                   <span>Portfolio</span>
-                  <h3>Creative Portfolio</h3>
+                  <h3>Portfolio</h3>
                 </div>
               </div>
             </div>
@@ -44,41 +60,15 @@ const Portfolio = () => {
               <Tabs>
                 <TabList>
                   <Tab>All</Tab>
-                  <Tab>Vimeo</Tab>
-                  <Tab>Youtube</Tab>
-                  <Tab>Photography</Tab>
-                  <Tab>Details</Tab>
+                  <Tab>Academic</Tab>
+                  <Tab>Personal</Tab>
+                  <Tab>Collaboration</Tab>
                 </TabList>
                 {/* END TABLIST */}
                 <div className="list_wrapper">
-                  <TabPanel>
+                  <TabPanel>                    
                     <ul className="portfolio_list">
-                      <li data-aos="fade-right" data-aos-duration="1200">
-                        <div className="inner">
-                          <div className="entry tokyo_tm_portfolio_animation_wrap">
-                            <img
-                              src="assets/img/portfolio/5.jpg"
-                              alt="Vimeo"
-                              data-tip
-                              data-for="vimeo"
-                              onClick={() => setOpen2(true)}
-                            />
-                            <ReactTooltip
-                              id="vimeo"
-                              place="bottom"
-                              type="light"
-                              effect="float"
-                              className="tooltip-wrapper"
-                            >
-                              <div>
-                                <h5>Teresa Butler</h5>
-                                <span>Vimeo</span>
-                              </div>
-                            </ReactTooltip>
-                          </div>
-                        </div>
-                      </li>
-                      {/* END VIMEO */}
+                      {/* START TagBots */}
                       <li
                         data-aos="fade-right"
                         data-aos-duration="1200"
@@ -87,112 +77,29 @@ const Portfolio = () => {
                         <div className="inner">
                           <div className="entry tokyo_tm_portfolio_animation_wrap">
                             <img
-                              src="assets/img/portfolio/2.jpg"
-                              alt="Youtube"
+                              src="assets/img/portfolio/tagbots_image.png"
+                              alt="TagBots"
                               data-tip
-                              data-for="youtube"
-                              onClick={() => setOpen(true)}
+                              data-for="tagbots"
+                              onClick={toggleModalTagBots}
                             />
                             <ReactTooltip
-                              id="youtube"
+                              id="tagbots"
                               place="bottom"
                               type="light"
                               effect="float"
                               className="tooltip-wrapper"
                             >
                               <div>
-                                <h5>Ashely Flores</h5>
-                                <span>Youtube</span>
+                                <h5>TagBots</h5>
+                                <span>Mobile Robot Development</span>
                               </div>
                             </ReactTooltip>
                           </div>
                         </div>
                       </li>
-                      {/* END YOUTUBE */}
-
-                      <li
-                        data-aos="fade-right"
-                        data-aos-duration="1200"
-                        data-aos-delay="200"
-                      >
-                        <div className="inner">
-                          <div className="entry tokyo_tm_portfolio_animation_wrap">
-                            <Item
-                              original="assets/img/portfolio/4.jpg"
-                              thumbnail="assets/img/portfolio/4.jpg"
-                              width={500}
-                              height={550}
-                            >
-                              {({ ref, open }) => (
-                                <img
-                                  src="assets/img/portfolio/4.jpg"
-                                  alt="Childhood"
-                                  data-tip
-                                  data-for="shot"
-                                  role="button"
-                                  ref={ref}
-                                  onClick={open}
-                                />
-                              )}
-                            </Item>
-                            <ReactTooltip
-                              id="shot"
-                              place="bottom"
-                              type="light"
-                              effect="float"
-                              className="tooltip-wrapper"
-                            >
-                              <div>
-                                <h5>Derek Smith</h5>
-                                <span>Shot</span>
-                              </div>
-                            </ReactTooltip>
-                          </div>
-                        </div>
-                      </li>
-                      {/* END SHOT */}
-                      <li
-                        data-aos="fade-right"
-                        data-aos-duration="1200"
-                        data-aos-delay="300"
-                      >
-                        <div className="inner">
-                          <div className="entry tokyo_tm_portfolio_animation_wrap">
-                            <Item
-                              original="assets/img/portfolio/3.jpg"
-                              thumbnail="assets/img/portfolio/3.jpg"
-                              width={500}
-                              height={550}
-                            >
-                              {({ ref, open }) => (
-                                <img
-                                  src="assets/img/portfolio/3.jpg"
-                                  alt="Childhood"
-                                  data-tip
-                                  data-for="shot"
-                                  role="button"
-                                  ref={ref}
-                                  onClick={open}
-                                />
-                              )}
-                            </Item>
-                            <ReactTooltip
-                              id="shot2"
-                              place="bottom"
-                              type="light"
-                              effect="float"
-                              className="tooltip-wrapper"
-                            >
-                              <div>
-                                <h5>Gloria jenkins</h5>
-                                <span>Shot</span>
-                              </div>
-                            </ReactTooltip>
-                          </div>
-                        </div>
-                      </li>
-                      {/* END SHOT */}
-
+                      {/* END TagBots */}
+                      {/* START Co-Ops */}
                       <li
                         data-aos="fade-right"
                         data-aos-duration="1200"
@@ -201,29 +108,29 @@ const Portfolio = () => {
                         <div className="inner">
                           <div className="entry tokyo_tm_portfolio_animation_wrap">
                             <img
-                              src="assets/img/portfolio/6.jpg"
+                              src="assets/img/portfolio/coops.jpeg"
                               alt="Details"
                               data-tip
-                              data-for="detail"
-                              onClick={toggleModalThree}
+                              data-for="coops"
+                              onClick={toggleModalCoOps}
                             />
-
                             <ReactTooltip
-                              id="detail"
+                              id="coops"
                               place="bottom"
                               type="light"
                               effect="float"
                               className="tooltip-wrapper"
                             >
                               <div>
-                                <h5>Selena Gomez</h5>
-                                <span>Details</span>
+                                <h5>Co-Ops: Collaborative Open Source and Privacy-Preserving Training for Learning to Drive</h5>
+                                <span>Academic Research Project</span>
                               </div>
                             </ReactTooltip>
                           </div>
                         </div>
                       </li>
-                      {/* END DETAILS */}
+                      {/* END Co-Ops */}
+                      {/* START TimeTable */}
                       <li
                         data-aos="fade-right"
                         data-aos-duration="1200"
@@ -232,214 +139,130 @@ const Portfolio = () => {
                         <div className="inner">
                           <div className="entry tokyo_tm_portfolio_animation_wrap">
                             <img
-                              src="assets/img/portfolio/7.jpg"
+                              src="assets/img/portfolio/timetable.jpg"
                               alt="Details"
                               data-tip
-                              data-for="detail2"
-                              onClick={toggleModalFour}
+                              data-for="timetable"
+                              onClick={toggleModalTimeTable}
                             />
-
                             <ReactTooltip
-                              id="detail2"
+                              id="timetable"
                               place="bottom"
                               type="light"
                               effect="float"
                               className="tooltip-wrapper"
                             >
                               <div>
-                                <h5>Ave Simone</h5>
-                                <span>Details</span>
+                                <h5>TimeTable - Class Scheduler</h5>
+                                <span>iOS Application Development</span>
                               </div>
                             </ReactTooltip>
                           </div>
                         </div>
                       </li>
-                      {/* END DETAILS */}
+                      {/* END TimeTable */}
+                      {/* START OED */}
+                      <li
+                        data-aos="fade-right"
+                        data-aos-duration="1200"
+                        data-aos-delay="100"
+                      >
+                        <div className="inner">
+                          <div className="entry tokyo_tm_portfolio_animation_wrap">
+                            <img
+                              src="assets/img/portfolio/oed.jpg"
+                              alt="OED"
+                              data-tip
+                              data-for="oed"
+                              onClick={toggleModalOED}
+                            />
+                            <ReactTooltip
+                              id="oed"
+                              place="bottom"
+                              type="light"
+                              effect="float"
+                              className="tooltip-wrapper"
+                            >
+                              <div>
+                                <h5>Open Energy Dashboard</h5>
+                                <span>Web Application Development</span>
+                              </div>
+                            </ReactTooltip>
+                          </div>
+                        </div>
+                      </li>
+                      {/* END OED */}
+                      {/* START Samurai Z */}
+                      <li
+                        data-aos="fade-right"
+                        data-aos-duration="1200"
+                        data-aos-delay="200"
+                      >
+                        <div className="inner">
+                          <div className="entry tokyo_tm_portfolio_animation_wrap">
+                            <img
+                              src="assets/img/portfolio/samuraiz.png"
+                              alt="Details"
+                              data-tip
+                              data-for="samuraiz"
+                              onClick={toggleModalSamuraiZ}
+                            />
+                            <ReactTooltip
+                              id="samuraiz"
+                              place="bottom"
+                              type="light"
+                              effect="float"
+                              className="tooltip-wrapper"
+                            >
+                              <div>
+                                <h5>Samurai Z</h5>
+                                <span>Podcast Co-Host</span>
+                              </div>
+                            </ReactTooltip>
+                          </div>
+                        </div>
+                      </li>
+                      {/* END Samurai Z */}
+                      {/* START Littrex */}
+                      <li
+                        data-aos="fade-right"
+                        data-aos-duration="1200"
+                        data-aos-delay="200"
+                      >
+                        <div className="inner">
+                          <div className="entry tokyo_tm_portfolio_animation_wrap">
+                            <img
+                              src="assets/img/portfolio/littrex_top.png"
+                              alt="Details"
+                              data-tip
+                              data-for="littrex"
+                              onClick={toggleModalLittrex}
+                            />
+                            <ReactTooltip
+                              id="littrex"
+                              place="bottom"
+                              type="light"
+                              effect="float"
+                              className="tooltip-wrapper"
+                            >
+                              <div>
+                                <h5>Littrex</h5>
+                                <span>Web Application Development</span>
+                              </div>
+                            </ReactTooltip>
+                          </div>
+                        </div>
+                      </li>
+                      {/* END Littrex */}
                     </ul>
                     {/* END PORTFOLIO LIST */}
                   </TabPanel>
                   {/* END ALL PORTFOLIO GALLERY */}
 
+                  {/* START ACADEMIC */}
                   <TabPanel>
                     <ul className="portfolio_list">
-                      <li data-aos="fade-right" data-aos-duration="1200">
-                        <div className="inner">
-                          <div className="entry tokyo_tm_portfolio_animation_wrap">
-                            <img
-                              src="assets/img/portfolio/5.jpg"
-                              alt="Vimeo"
-                              data-tip
-                              data-for="vimeo"
-                              onClick={() => setOpen2(true)}
-                            />
-                            <ReactTooltip
-                              id="vimeo"
-                              place="bottom"
-                              type="light"
-                              effect="float"
-                              className="tooltip-wrapper"
-                            >
-                              <div>
-                                <h5>Teresa Butler</h5>
-                                <span>Vimeo</span>
-                              </div>
-                            </ReactTooltip>
-                          </div>
-                        </div>
-                      </li>
-                      {/* END VIMEO */}
-                    </ul>
-                    {/* END PORTFOLIO LIST */}
-                  </TabPanel>
-                  {/* END VIMEO VIDEO */}
-
-                  <TabPanel>
-                    <ul className="portfolio_list">
-                      <li data-aos="fade-right" data-aos-duration="1200">
-                        <div className="inner">
-                          <div className="entry tokyo_tm_portfolio_animation_wrap">
-                            <img
-                              src="assets/img/portfolio/2.jpg"
-                              alt="Youtube"
-                              data-tip
-                              data-for="youtube"
-                              onClick={() => setOpen(true)}
-                            />
-                            <ReactTooltip
-                              id="youtube"
-                              place="bottom"
-                              type="light"
-                              effect="float"
-                              className="tooltip-wrapper"
-                            >
-                              <div>
-                                <h5>Ashely Flores</h5>
-                                <span>Youtube</span>
-                              </div>
-                            </ReactTooltip>
-                          </div>
-                        </div>
-                      </li>
-                      {/* END YOUTUBE */}
-                    </ul>
-                    {/* END PORTFOLIO LIST */}
-                  </TabPanel>
-                  {/* END YOUTUBE VIDEO */}
-
-                  <TabPanel>
-                    <ul className="portfolio_list">
-                      <li data-aos="fade-right" data-aos-duration="1200">
-                        <div className="inner">
-                          <div className="entry tokyo_tm_portfolio_animation_wrap">
-                            <Item
-                              original="assets/img/portfolio/4.jpg"
-                              thumbnail="assets/img/portfolio/4.jpg"
-                              width={500}
-                              height={550}
-                            >
-                              {({ ref, open }) => (
-                                <img
-                                  src="assets/img/portfolio/4.jpg"
-                                  alt="Childhood"
-                                  data-tip
-                                  data-for="shot"
-                                  role="button"
-                                  ref={ref}
-                                  onClick={open}
-                                />
-                              )}
-                            </Item>
-                            <ReactTooltip
-                              id="shot"
-                              place="bottom"
-                              type="light"
-                              effect="float"
-                              className="tooltip-wrapper"
-                            >
-                              <div>
-                                <h5>Derek Smith</h5>
-                                <span>Shot</span>
-                              </div>
-                            </ReactTooltip>
-                          </div>
-                        </div>
-                      </li>
-                      {/* END SHOT */}
-                      <li
-                        data-aos="fade-right"
-                        data-aos-duration="1200"
-                        data-aos-delay="100"
-                      >
-                        <div className="inner">
-                          <div className="entry tokyo_tm_portfolio_animation_wrap">
-                            <Item
-                              original="assets/img/portfolio/3.jpg"
-                              thumbnail="assets/img/portfolio/3.jpg"
-                              width={500}
-                              height={550}
-                            >
-                              {({ ref, open }) => (
-                                <img
-                                  src="assets/img/portfolio/3.jpg"
-                                  alt="Childhood"
-                                  data-tip
-                                  data-for="shot"
-                                  role="button"
-                                  ref={ref}
-                                  onClick={open}
-                                />
-                              )}
-                            </Item>
-                            <ReactTooltip
-                              id="shot2"
-                              place="bottom"
-                              type="light"
-                              effect="float"
-                              className="tooltip-wrapper"
-                            >
-                              <div>
-                                <h5>Gloria jenkins</h5>
-                                <span>Shot</span>
-                              </div>
-                            </ReactTooltip>
-                          </div>
-                        </div>
-                      </li>
-                      {/* END SHOT */}
-                    </ul>
-                    {/* END PORTFOLIO LIST */}
-                  </TabPanel>
-                  {/* END PHOTOGRAHY */}
-
-                  <TabPanel>
-                    <ul className="portfolio_list">
-                      <li data-aos="fade-right" data-aos-duration="1200">
-                        <div className="inner">
-                          <div className="entry tokyo_tm_portfolio_animation_wrap">
-                            <img
-                              src="assets/img/portfolio/6.jpg"
-                              alt="Details"
-                              data-tip
-                              data-for="detail"
-                              onClick={toggleModalThree}
-                            />
-
-                            <ReactTooltip
-                              id="detail"
-                              place="bottom"
-                              type="light"
-                              effect="float"
-                              className="tooltip-wrapper"
-                            >
-                              <div>
-                                <h5>Selena Gomez</h5>
-                                <span>Details</span>
-                              </div>
-                            </ReactTooltip>
-                          </div>
-                        </div>
-                      </li>
-                      {/* END DETAILS */}
+                      {/* START TagBots */}
                       <li
                         data-aos="fade-right"
                         data-aos-duration="1200"
@@ -448,33 +271,203 @@ const Portfolio = () => {
                         <div className="inner">
                           <div className="entry tokyo_tm_portfolio_animation_wrap">
                             <img
-                              src="assets/img/portfolio/7.jpg"
-                              alt="Details"
+                              src="assets/img/portfolio/tagbots_image.png"
+                              alt="TagBots"
                               data-tip
-                              data-for="detail2"
-                              onClick={toggleModalFour}
+                              data-for="tagbots"
+                              onClick={toggleModalTagBots}
                             />
-
                             <ReactTooltip
-                              id="detail2"
+                              id="tagbots"
                               place="bottom"
                               type="light"
                               effect="float"
                               className="tooltip-wrapper"
                             >
                               <div>
-                                <h5>Ave Simone</h5>
-                                <span>Details</span>
+                                <h5>TagBots</h5>
+                                <span>Mobile Robot Development</span>
                               </div>
                             </ReactTooltip>
                           </div>
                         </div>
                       </li>
-                      {/* END DETAILS */}
+                      {/* END TagBots */}
+                      {/* START Co-Ops */}
+                      <li
+                        data-aos="fade-right"
+                        data-aos-duration="1200"
+                        data-aos-delay="100"
+                      >
+                        <div className="inner">
+                          <div className="entry tokyo_tm_portfolio_animation_wrap">
+                            <img
+                              src="assets/img/portfolio/coops.jpeg"
+                              alt="Details"
+                              data-tip
+                              data-for="coops"
+                              onClick={toggleModalCoOps}
+                            />
+                            <ReactTooltip
+                              id="coops"
+                              place="bottom"
+                              type="light"
+                              effect="float"
+                              className="tooltip-wrapper"
+                            >
+                              <div>
+                                <h5>Co-Ops: Collaborative Open Source and Privacy-Preserving Training for Learning to Drive</h5>
+                                <span>Academic Research Project</span>
+                              </div>
+                            </ReactTooltip>
+                          </div>
+                        </div>
+                      </li>
+                      {/* END Co-Ops */}
+                      {/* START OED */}
+                      <li
+                        data-aos="fade-right"
+                        data-aos-duration="1200"
+                        data-aos-delay="100"
+                      >
+                        <div className="inner">
+                          <div className="entry tokyo_tm_portfolio_animation_wrap">
+                            <img
+                              src="assets/img/portfolio/oed.jpg"
+                              alt="Details"
+                              data-tip
+                              data-for="oed"
+                              onClick={toggleModalOED}
+                            />
+                            <ReactTooltip
+                              id="oed"
+                              place="bottom"
+                              type="light"
+                              effect="float"
+                              className="tooltip-wrapper"
+                            >
+                              <div>
+                                <h5>Open Energy Dashboard</h5>
+                                <span>Web Application Development</span>
+                              </div>
+                            </ReactTooltip>
+                          </div>
+                        </div>
+                      </li>
+                      {/* END OED */}
                     </ul>
-                    {/* END DETAILS GALLERY */}
+                    {/* END PORTFOLIO LIST */}
                   </TabPanel>
-                  {/* END CREATIVE PORTFOLIO GALLERY */}
+                  {/* END ACADEMIC */}
+
+                  {/* START PERSONAL */}
+                  <TabPanel>
+                    <ul className="portfolio_list">
+                      {/* START TimeTable */}
+                      <li
+                        data-aos="fade-right"
+                        data-aos-duration="1200"
+                        data-aos-delay="200"
+                      >
+                        <div className="inner">
+                          <div className="entry tokyo_tm_portfolio_animation_wrap">
+                            <img
+                              src="assets/img/portfolio/timetable.jpg"
+                              alt="Details"
+                              data-tip
+                              data-for="timetable"
+                              onClick={toggleModalTimeTable}
+                            />
+                            <ReactTooltip
+                              id="timetable"
+                              place="bottom"
+                              type="light"
+                              effect="float"
+                              className="tooltip-wrapper"
+                            >
+                              <div>
+                                <h5>TimeTable - Class Scheduler</h5>
+                                <span>iOS Application Development</span>
+                              </div>
+                            </ReactTooltip>
+                          </div>
+                        </div>
+                      </li>
+                      {/* END TimeTable */}
+                    </ul>
+                    {/* END PORTFOLIO LIST */}
+                  </TabPanel>
+                  {/* END PERSONAL */}
+
+                  {/* START TEAM */}
+                  <TabPanel>
+                    <ul className="portfolio_list">
+                      {/* START Samurai Z */}
+                      <li
+                        data-aos="fade-right"
+                        data-aos-duration="1200"
+                        data-aos-delay="200"
+                      >
+                        <div className="inner">
+                          <div className="entry tokyo_tm_portfolio_animation_wrap">
+                            <img
+                              src="assets/img/portfolio/samuraiz.png"
+                              alt="Details"
+                              data-tip
+                              data-for="samuraiz"
+                              onClick={toggleModalSamuraiZ}
+                            />
+                            <ReactTooltip
+                              id="samuraiz"
+                              place="bottom"
+                              type="light"
+                              effect="float"
+                              className="tooltip-wrapper"
+                            >
+                              <div>
+                                <h5>Samurai Z</h5>
+                                <span>Podcast Co-Host</span>
+                              </div>
+                            </ReactTooltip>
+                          </div>
+                        </div>
+                      </li>
+                      {/* END Samurai Z */}
+                      {/* START Littrex */}
+                      <li
+                        data-aos="fade-right"
+                        data-aos-duration="1200"
+                        data-aos-delay="200"
+                      >
+                        <div className="inner">
+                          <div className="entry tokyo_tm_portfolio_animation_wrap">
+                            <img
+                              src="assets/img/portfolio/littrex_top.png"
+                              alt="Details"
+                              data-tip
+                              data-for="littrex"
+                              onClick={toggleModalLittrex}
+                            />
+                            <ReactTooltip
+                              id="littrex"
+                              place="bottom"
+                              type="light"
+                              effect="float"
+                              className="tooltip-wrapper"
+                            >
+                              <div>
+                                <h5>Littrex</h5>
+                                <span>Web Application Development</span>
+                              </div>
+                            </ReactTooltip>
+                          </div>
+                        </div>
+                      </li>
+                      {/* END Littrex */}
+                    </ul>
+                    {/* END PORTFOLIO LIST */}
+                  </TabPanel>
+                  {/* END TEAM */}
                 </div>
                 {/* END LIST WRAPPER */}
               </Tabs>
@@ -482,35 +475,18 @@ const Portfolio = () => {
           </div>
         </div>
       </Gallery>
-      {/* popup vidoe for youtube modal activation */}
-      <ModalVideo
-        channel="youtube"
-        autoplay
-        isOpen={isOpen}
-        videoId="1gyTUHP6ne8"
-        onClose={() => setOpen(false)}
-      />
 
-      {/* popup vidoe for vimeo modal activation */}
-      <ModalVideo
-        channel="vimeo"
-        autoplay
-        isOpen={isOpen2}
-        videoId="100171151"
-        onClose={() => setOpen2(false)}
-      />
-
-      {/* START MODAL FOR PORTFOLIO DETAILS */}
+      {/* START MODAL FOR TagBots */}
       <Modal
-        isOpen={isOpen3}
-        onRequestClose={toggleModalThree}
-        contentLabel="My dialog"
+        isOpen={isModalOpenTagBots}
+        onRequestClose={toggleModalTagBots}
+        contentLabel="TagBots"
         className="mymodal"
         overlayClassName="myoverlay"
         closeTimeoutMS={500}
       >
         <div className="tokyo_tm_modalbox_news portfolio_tm_modalbox">
-          <button className="close-modal" onClick={toggleModalThree}>
+          <button className="close-modal" onClick={toggleModalTagBots}>
             <img src="assets/img/svg/cancel.svg" alt="close icon" />
           </button>
           {/* END CLOSE ICON */}
@@ -521,50 +497,308 @@ const Portfolio = () => {
                 <div
                   className="main"
                   style={{
-                    backgroundImage: "url(assets/img/portfolio/6.jpg)",
+                    backgroundImage: "url(assets/img/portfolio/robotics_for_kids.jpg)",
                   }}
                 ></div>
               </div>
               {/* END IMAGE */}
               <div className="portfolio_main_title">
-                <h3>Selena Gomez</h3>
-                <span>Details</span>
+                <h3>TagBots</h3>
+                <span>Mobile Robot Development</span>
               </div>
               {/* END portfolio_main_title */}
               <div className="main_details">
                 <div className="textbox">
                   <p>
-                    We live in a world where we need to move quickly and iterate
-                    on our ideas as flexibly as possible. Building mockups
-                    strikes the ideal balance between true-life representation
-                    of the end product and ease of modification.
-                  </p>
-                  <p>
-                    Mockups are useful both for the creative phase of the
-                    project - for instance when you're trying to figure out your
-                    user flows or the proper visual hierarchy - and the
-                    production phase when they will represent the target
-                    product. Making mockups a part of your creative and
-                    development process allows you to quickly and easily ideate.
+                    TagBots is a class project from EC545 Cyber-Physical Systems at Boston University. 
+                    We demonstrated surveillance with mobile robots using Robot Operating System (ROS), Python, and OpenCV.
+                    We programmed the robots to autonomously search and chase red objects, engaging in a game of tag with human participants.
+                    We implemented our own target detection and object avoidance features utilizing a depth camera and LiDAR sensor.
                   </p>
                 </div>
                 <div className="detailbox">
                   <ul>
                     <li>
-                      <span className="first">Client</span>
-                      <span>Alvaro Morata</span>
+                      <span className="first">Category</span>
+                      <span>Academic project</span>
                     </li>
                     <li>
-                      <span className="first">Category</span>
-                      <span>Details</span>
+                      <span className="first">Technologies</span>
+                      <span>Robot Operating System (ROS), Python, OpenCV</span>
                     </li>
                     <li>
                       <span className="first">Date</span>
-                      <span>March 07, 2021</span>
+                      <span>September - December 2023</span>
                     </li>
                     <li>
-                      <span className="first">Share</span>
-                      <Social />
+                      <span className="first">Reference</span>
+                      <span><a href="https://github.com/AidanNowa/EC545_TAGBOT">GitHub Repository</a></span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              {/* main_details */}
+
+              <div className="additional_images">
+                <ul className="gallery_zoom">
+                  <li>
+                    <div className="list_inner">
+                      <div className="my_image">
+                        <img src="img/thumbs/4-2.jpg" alt="thumb" />
+                        <div
+                          className="main"
+                          style={{
+                            backgroundImage: "url(assets/img/portfolio/demoplay.gif)",
+                          }}
+                        ></div>
+                      </div>
+                    </div>
+                  </li>
+                  {/* END SHOT */}
+                  <li>
+                    <div className="list_inner">
+                      <div className="my_image">
+                        <img src="img/thumbs/4-2.jpg" alt="thumb" />
+                        <div
+                          className="main"
+                          style={{
+                            backgroundImage: "url(assets/img/portfolio/rosmaster.jpeg)",
+                          }}
+                        ></div>
+                      </div>
+                    </div>
+                  </li>
+                  {/* END SHOT */}
+                  <li>
+                    <div className="list_inner">
+                      <div className="my_image">
+                        <img src="img/thumbs/4-2.jpg" alt="thumb" />
+                        <div
+                          className="main"
+                          style={{
+                            backgroundImage: "url(assets/img/portfolio/high_level_diagram.jpg)",
+                          }}
+                        ></div>
+                      </div>
+                    </div>
+                  </li>
+                  {/* END SHOT */}
+                </ul>
+              </div>
+            </div>
+          </div>
+          {/* END BOX INNER */}
+        </div>
+        {/* END MODALBOX NEWS */}
+      </Modal>
+      {/* END MODAL FOR TagBots */}
+
+      {/* START MODAL FOR CoOps */}
+      <Modal
+        isOpen={isModalOpenCoOps}
+        onRequestClose={toggleModalCoOps}
+        contentLabel="CoOps"
+        className="mymodal"
+        overlayClassName="myoverlay"
+        closeTimeoutMS={500}
+      >
+        <div className="tokyo_tm_modalbox_news portfolio_tm_modalbox">
+          <button className="close-modal" onClick={toggleModalCoOps}>
+            <img src="assets/img/svg/cancel.svg" alt="close icon" />
+          </button>
+          {/* END CLOSE ICON */}
+          <div className="box_inner">
+            <div className="description_wrap scrollable">
+              <div className="image">
+                <img src="assets/img/thumbs/4-3.jpg" alt="tumb" />
+                <div
+                  className="main"
+                  style={{
+                    backgroundImage: "url(assets/img/portfolio/coops.jpeg)",
+                  }}
+                ></div>
+              </div>
+              {/* END IMAGE */}
+              <div className="portfolio_main_title">
+                <h3>Co-Ops: Collaborative Open Source and Privacy-Preserving Training for Learning to Drive</h3>
+                <span>Academic Research Project</span>
+              </div>
+              {/* END portfolio_main_title */}
+              <div className="main_details">
+                <div className="textbox">
+                  <p>
+                    At Boston University H2X Lab, under the guidance of Dr. Ohn-Bar, I participate in a series of research project focused on Federated Learning (FL) technology for end-to-end driving models. 
+                    My primary objective is to develop a FL platform capable of enriching training datasets within the domain of autonomous driving.
+                    I successfully created and demonstrated a prototype of this platform, showcasing its potential to the Red Hat researcher group.
+                  </p>
+                  <p>
+                    Another aspect of the project is leading research on the risks of privacy leakage through gradient inversions within the FL platform.
+                    Utilizing Python and PyTorch, our team is actively working towards a publication to address insights into the intersection of FL and privacy concerns.
+                  </p>
+                </div>
+                <div className="detailbox">
+                  <ul>
+                    <li>
+                      <span className="first">Category</span>
+                      <span>Academic project</span>
+                    </li>
+                    <li>
+                      <span className="first">Technologies</span>
+                      <span>Python, PyTorch, Red Hat OpenShift</span>
+                    </li>
+                    <li>
+                      <span className="first">Date</span>
+                      <span>June 2023 - Present</span>
+                    </li>
+                    <li>
+                      <span className="first">Reference</span>
+                      <p><span><a href="https://research.redhat.com/blog/research_project/co-ops-collaborative-open-source-and-privacy-preserving-training-for-learning-to-drive/">Red Hat Research article</a></span></p>
+                      <p><span><a href="https://github.com/shuheif/co-ops-server">GitHub repository</a></span></p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              {/* main_details */}
+            </div>
+          </div>
+          {/* END BOX INNER */}
+        </div>
+        {/* END MODALBOX NEWS */}
+      </Modal>
+      {/* END MODAL FOR CoOps */}
+
+      {/* START MODAL FOR OED */}
+      <Modal
+        isOpen={isModalOpenOED}
+        onRequestClose={toggleModalOED}
+        contentLabel="Open Energy Dashboard"
+        className="mymodal"
+        overlayClassName="myoverlay"
+        closeTimeoutMS={500}
+      >
+        <div className="tokyo_tm_modalbox_news portfolio_tm_modalbox">
+          <button className="close-modal" onClick={toggleModalOED}>
+            <img src="assets/img/svg/cancel.svg" alt="close icon" />
+          </button>
+          {/* END CLOSE ICON */}
+          <div className="box_inner">
+            <div className="description_wrap scrollable">
+              <div className="image">
+                <img src="assets/img/thumbs/4-3.jpg" alt="tumb" />
+                <div
+                  className="main"
+                  style={{
+                    backgroundImage: "url(assets/img/portfolio/oed.jpg)",
+                  }}
+                ></div>
+              </div>
+              {/* END IMAGE */}
+              <div className="portfolio_main_title">
+                <h3>Open Energy Dashboard</h3>
+                <span>Web Application Development</span>
+              </div>
+              {/* END portfolio_main_title */}
+              <div className="main_details">
+                <div className="textbox">
+                  <p>
+                    Open Energy Dashboard (OED) is an open-sourced web application that visualizes energy information on college campuses. 
+                    As one of the first members in the project, I developed its comparison graph functionalities, 
+                    enabling data sorting based on time periods and specific areas. In Fall 2018, I was awarded an Honor's Term for leading the project during the semester.
+                    Today, OED is actively used by a number of colleges across the United States.
+                  </p>
+                </div>
+                <div className="detailbox">
+                  <ul>
+                    <li>
+                      <span className="first">Category</span>
+                      <span>Academic project</span>
+                    </li>
+                    <li>
+                      <span className="first">Technologies</span>
+                      <span>TypeScript, Node.js, React, Redux, PostgreSQL, Docker</span>
+                    </li>
+                    <li>
+                      <span className="first">Date</span>
+                      <span>January - December 2018</span>
+                    </li>
+                    <li>
+                      <span className="first">Reference</span>
+                      <p><span><a href="https://openenergydashboard.github.io/">OED official website</a></span></p>
+                      <p><span><a href="https://github.com/OpenEnergyDashboard/OED">OED GitHub repository</a></span></p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              {/* main_details */}
+            </div>
+          </div>
+          {/* END BOX INNER */}
+        </div>
+        {/* END MODALBOX NEWS */}
+      </Modal>
+      {/* END MODAL FOR OED */}
+
+      {/* START MODAL FOR TimeTable */}
+      <Modal
+        isOpen={isModalOpenTimeTable}
+        onRequestClose={toggleModalTimeTable}
+        contentLabel="TimeTable"
+        className="mymodal"
+        overlayClassName="myoverlay"
+        closeTimeoutMS={500}
+      >
+        <div className="tokyo_tm_modalbox_news portfolio_tm_modalbox">
+          <button className="close-modal" onClick={toggleModalTimeTable}>
+            <img src="assets/img/svg/cancel.svg" alt="close icon" />
+          </button>
+          {/* END CLOSE ICON */}
+          <div className="box_inner">
+            <div className="description_wrap scrollable">
+              <div className="image">
+                <img src="assets/img/thumbs/4-3.jpg" alt="tumb" />
+                <div
+                  className="main"
+                  style={{
+                    backgroundImage: "url(assets/img/portfolio/timetable.jpg)",
+                  }}
+                ></div>
+              </div>
+              {/* END IMAGE */}
+              <div className="portfolio_main_title">
+                <h3>TimeTable - Class Scheduler</h3>
+                <span>iOS Application Development</span>
+              </div>
+              {/* END portfolio_main_title */}
+              <div className="main_details">
+                <div className="textbox">
+                  <p>
+                    TimeTable is an iOS app for college students to keep track of their academic schedule and progress. 
+                    It achieved more than 53,000 downloads over its six-year presence on App Store. 
+                    The app is no longer available on App Store.
+                  </p>
+                  <p>
+                    The core features include a table view of academic schedule, 
+                    real-time data sync across iOS devices, and schedule sync with iOS Calendar app.
+                  </p>
+                </div>
+                <div className="detailbox">
+                  <ul>
+                    <li>
+                      <span className="first">Category</span>
+                      <span>Personal project</span>
+                    </li>
+                    <li>
+                      <span className="first">Technologies</span>
+                      <span>Swift, Xcode</span>
+                    </li>
+                    <li>
+                      <span className="first">Date</span>
+                      <span>2014 - 2021</span>
+                    </li>
+                    <li>
+                      <span className="first">Reference</span>
+                      <p><span><a href="https://timetable.mystrikingly.com/">App homepage</a></span></p>
+                      <p><span><a href="https://medium.com/@shuheifujita/ios%E3%82%A2%E3%83%97%E3%83%AA-6%E5%B9%B4%E9%96%93%E3%81%AE%E9%96%8B%E7%99%BA%E3%81%BE%E3%81%A8%E3%82%81-fcddd98347c8">Blog article</a></span></p>
                       {/* END SOCIAL SHARE */}
                     </li>
                   </ul>
@@ -581,7 +815,7 @@ const Portfolio = () => {
                         <div
                           className="main"
                           style={{
-                            backgroundImage: "url(assets/img/portfolio/6.jpg)",
+                            backgroundImage: "url(assets/img/portfolio/timetable_class.jpeg)",
                           }}
                         ></div>
                       </div>
@@ -595,7 +829,7 @@ const Portfolio = () => {
                         <div
                           className="main"
                           style={{
-                            backgroundImage: "url(assets/img/portfolio/2.jpg)",
+                            backgroundImage: "url(assets/img/portfolio/timetable_calendar.jpeg)",
                           }}
                         ></div>
                       </div>
@@ -609,7 +843,7 @@ const Portfolio = () => {
                         <div
                           className="main"
                           style={{
-                            backgroundImage: "url(assets/img/portfolio/3.jpg)",
+                            backgroundImage: "url(assets/img/portfolio/timetable_sync.jpeg)",
                           }}
                         ></div>
                       </div>
@@ -624,19 +858,19 @@ const Portfolio = () => {
         </div>
         {/* END MODALBOX NEWS */}
       </Modal>
-      {/* END MODAL FOR PORTFOLIO DETAILS */}
+      {/* END MODAL FOR TimeTable */}
 
-      {/* START MODAL FOR PORTFOLIO DETAILS */}
+      {/* START MODAL FOR Littrex */}
       <Modal
-        isOpen={isOpen4}
-        onRequestClose={toggleModalFour}
-        contentLabel="My dialog"
+        isOpen={isModalOpenLittrex}
+        onRequestClose={toggleModalLittrex}
+        contentLabel="Littrex"
         className="mymodal"
         overlayClassName="myoverlay"
         closeTimeoutMS={500}
       >
         <div className="tokyo_tm_modalbox_news portfolio_tm_modalbox">
-          <button className="close-modal" onClick={toggleModalFour}>
+          <button className="close-modal" onClick={toggleModalLittrex}>
             <img src="assets/img/svg/cancel.svg" alt="close icon" />
           </button>
           {/* END CLOSE ICON */}
@@ -647,51 +881,40 @@ const Portfolio = () => {
                 <div
                   className="main"
                   style={{
-                    backgroundImage: "url(assets/img/portfolio/7.jpg)",
+                    backgroundImage: "url(assets/img/portfolio/littrex_top.png)",
                   }}
                 ></div>
               </div>
               {/* END IMAGE */}
               <div className="portfolio_main_title">
-                <h3>Ave Simone</h3>
-                <span>Details</span>
+                <h3>Littrex</h3>
+                <span>Web-based Learning Management System Development</span>
               </div>
               {/* END portfolio_main_title */}
               <div className="main_details">
                 <div className="textbox">
                   <p>
-                    We live in a world where we need to move quickly and iterate
-                    on our ideas as flexibly as possible. Building mockups
-                    strikes the ideal balance between true-life representation
-                    of the end product and ease of modification.
-                  </p>
-                  <p>
-                    Mockups are useful both for the creative phase of the
-                    project - for instance when you're trying to figure out your
-                    user flows or the proper visual hierarchy - and the
-                    production phase when they will represent the target
-                    product. Making mockups a part of your creative and
-                    development process allows you to quickly and easily ideate.
+                    We developed a web-based Learning Management System (LMS) using PHP and MySQL.
+                    We received pre-seed funding from the gBETA' startup accelerator program by gener8tor'.
                   </p>
                 </div>
                 <div className="detailbox">
                   <ul>
                     <li>
-                      <span className="first">Client</span>
-                      <span>Alvaro Morata</span>
+                      <span className="first">Category</span>
+                      <span>Collaboration Project</span>
                     </li>
                     <li>
-                      <span className="first">Category</span>
-                      <span>Details</span>
+                      <span className="first">Technologies</span>
+                      <span>PHP, CakePHP, MySQL</span>
                     </li>
                     <li>
                       <span className="first">Date</span>
-                      <span>March 07, 2021</span>
+                      <span>2017</span>
                     </li>
                     <li>
-                      <span className="first">Share</span>
-                      <Social />
-                      {/* END SOCIAL SHARE */}
+                      <span className="first">Reference</span>
+                      <span><a href="https://github.com/shuheif/Littrex">GitHub repository</a></span>
                     </li>
                   </ul>
                 </div>
@@ -707,7 +930,7 @@ const Portfolio = () => {
                         <div
                           className="main"
                           style={{
-                            backgroundImage: "url(assets/img/portfolio/6.jpg)",
+                            backgroundImage: "url(assets/img/portfolio/littrex_grades.png)",
                           }}
                         ></div>
                       </div>
@@ -721,7 +944,7 @@ const Portfolio = () => {
                         <div
                           className="main"
                           style={{
-                            backgroundImage: "url(assets/img/portfolio/5.jpg)",
+                            backgroundImage: "url(assets/img/portfolio/littrex_user.png)",
                           }}
                         ></div>
                       </div>
@@ -735,7 +958,7 @@ const Portfolio = () => {
                         <div
                           className="main"
                           style={{
-                            backgroundImage: "url(assets/img/portfolio/4.jpg)",
+                            backgroundImage: "url(assets/img/portfolio/littrex_course.png)",
                           }}
                         ></div>
                       </div>
@@ -750,7 +973,72 @@ const Portfolio = () => {
         </div>
         {/* END MODALBOX NEWS */}
       </Modal>
-      {/* END MODAL FOR PORTFOLIO DETAILS */}
+      {/* END MODAL FOR Littrex */}
+
+      {/* START MODAL FOR SamuraiZ */}
+      <Modal
+        isOpen={isModalOpenSamuraiZ}
+        onRequestClose={toggleModalSamuraiZ}
+        contentLabel="SamuraiZ"
+        className="mymodal"
+        overlayClassName="myoverlay"
+        closeTimeoutMS={500}
+      >
+        <div className="tokyo_tm_modalbox_news portfolio_tm_modalbox">
+          <button className="close-modal" onClick={toggleModalSamuraiZ}>
+            <img src="assets/img/svg/cancel.svg" alt="close icon" />
+          </button>
+          {/* END CLOSE ICON */}
+          <div className="box_inner">
+            <div className="description_wrap scrollable">
+              <div className="image">
+                <img src="assets/img/thumbs/4-3.jpg" alt="tumb" />
+                <div
+                  className="main"
+                  style={{
+                    backgroundImage: "url(assets/img/portfolio/samuraiz.png)",
+                  }}
+                ></div>
+              </div>
+              {/* END IMAGE */}
+              <div className="portfolio_main_title">
+                <h3>Samurai Z - The World in 2035</h3>
+                <span>Podcast Co-Host</span>
+              </div>
+              {/* END portfolio_main_title */}
+              <div className="main_details">
+                <div className="textbox">
+                  <p>
+                    As a co-host of a podcast channel tailored for the Gen Z audience, I explore the intersection of technologies and businesses, envisioning the world in 2035.
+                    Over the past three years, our podcast has become a dynamic platform where we delve into new technologies, emerging trends, and innovative concepts that could shape the future landscape.
+                    With over 70 episodes uploaded, our discusssions cover a diverse range of topics, offering our audience insightful perspectives and thought-provoking conversations.
+                  </p>
+                </div>
+                <div className="detailbox">
+                  <ul>
+                    <li>
+                      <span className="first">Category</span>
+                      <span>Collaboration Project</span>
+                    </li>
+                    <li>
+                      <span className="first">Date</span>
+                      <span>2022 - Present</span>
+                    </li>
+                    <li>
+                      <span className="first">Reference</span>
+                      <span><a href="https://podcasters.spotify.com/pod/show/samuraiz">Samurai Z Homepage</a></span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              {/* main_details */}
+            </div>
+          </div>
+          {/* END BOX INNER */}
+        </div>
+        {/* END MODALBOX NEWS */}
+      </Modal>
+      {/* END MODAL FOR SamuraiZ */}
     </>
   );
 };
