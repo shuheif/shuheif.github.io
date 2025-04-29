@@ -16,7 +16,7 @@ const PersonalInfo = () => {
           name: "Email",
           content: (
             <>
-              <a href="mailto:me@shuheifujita.com">me@shuheifujita.com</a>
+              <a href="mailto:sfujita@bu.edu">sfujita@bu.edu</a>
             </>
           ),
         },

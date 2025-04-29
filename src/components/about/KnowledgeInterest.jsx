@@ -9,8 +9,8 @@ const KnowledgeInterest = () => {
       content: [
         " Python, SQL, JavaScript, Java, PHP",
         " PyTorch, TensorFlow, Robot Operating System (ROS)",
-        " HTML, CSS, React, Redux, Bootstrap",
-        " Git, Kubernetes, Red Hat OpenShift, Linux",
+        " React, Redux, HTML, CSS",
+        " Git, Kubernetes, Google Cloud, Red Hat OpenShift, Linux",
         " Tableau, Atlassian Confluence, Jira"
       ],
     },

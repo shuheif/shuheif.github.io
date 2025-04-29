@@ -17,6 +17,10 @@ const SocialShare = [
     iconName: "spotify",
     link: "https://podcasters.spotify.com/pod/show/samuraiz",
   },
+  {
+    iconName: "medium",
+    link: "https://medium.com/@shuheifujita",
+  },
 ];
 const Social = () => {
   return (

@@ -9,18 +9,24 @@ const Resume = () => {
       resume: [
         {
           id: 1,
-          year: "Summer 2023",
+          year: "2024 - Present",
+          institute: "Application Developemnt Engineer @ Arista Networks, Inc.",
+          degree: "I create full-stack solutions for internal business intelligence at Arista Networks.",
+        },
+        {
+          id: 2,
+          year: "2023 - 2024",
           institute: "Research Assistant @ Boston University",
           degree: "I prototyped a Federated Learning platform for driving decision-making models. I researched its potential risks of privacy leakage through Gradient Inversions.",
         },
         {
-          id: 2,
+          id: 3,
           year: "2019 - 2022",
           institute: "Senior Operations Analyst @ Indeed Japan K.K.",
           degree: "I crafted strategies to enhance content quality on the job portal through in-depth data analysis. I boosted the team's operational efficiency by automating and outsourcing tasks, resulting in a 50% reduction in incoming inquiries.",
         },
         {
-          id: 3,
+          id: 4,
           year: "Summer 2018",
           institute: "Cloud Programmer @ Toyota Tsusho Systems US, Inc.",
           degree: "I prototyped a chatbot AI to automate the company’s customer service operations by training ‘Seq2Seq’ models on various open-sourced datasets.",
